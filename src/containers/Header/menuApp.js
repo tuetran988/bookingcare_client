@@ -26,7 +26,7 @@ export const adminMenu = [
     ],
   },
   {
-    // Quan Ly Phong Kham
+    // Manage Clinic
     name: "menu.admin.clinic",
     menus: [
       {
@@ -36,7 +36,7 @@ export const adminMenu = [
     ],
   },
   {
-    // Quan Ly Chuyen Khoa
+    // Manage Specialty
     name: "menu.admin.specialty",
     menus: [
       {
@@ -46,7 +46,7 @@ export const adminMenu = [
     ],
   },
   {
-    // Quan Ly Cam nang
+    // Manage HandBook
     name: "menu.admin.handbook",
     menus: [
       {
