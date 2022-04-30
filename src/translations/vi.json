@@ -30,24 +30,25 @@
       "crud-redux": "CRUD Redux",
       "clinic": "Phòng Khám",
       "manage-clinic": "Quản Lí Phòng Khám",
-      "specialty":"Chuyên Khoa",
-      "manage-specialty":"Quản Lí Chuyên Khoa",
-      "handbook":"Cẩm Nang",
-      "manage-handbook":"Quản Lí Cẩm Nang"
+      "specialty": "Chuyên Khoa",
+      "manage-specialty": "Quản Lí Chuyên Khoa",
+      "handbook": "Cẩm Nang",
+      "manage-handbook": "Quản Lí Cẩm Nang"
     }
   },
-  "manage-user":{
-    "add":"Thêm Mới Người Dùng",
-    "email":"Email",
-    "password":"Mật Khẩu",
-    "first-name":"Tên",
-    "last-name":"Họ",
-    "phone-number":"Số Điện Thoại",
-    "address":"Địa Chỉ",
-    "gender":"Giới Tính",
-    "position":"Chức Danh",
-    "role":"Vai Trò",
-    "image":"Ảnh Đại Diện",
-    "save":"Lưu Người Dùng"
+  "manage-user": {
+    "add": "Thêm Mới Người Dùng",
+    "email": "Email",
+    "password": "Mật Khẩu",
+    "first-name": "Tên",
+    "last-name": "Họ",
+    "phone-number": "Số Điện Thoại",
+    "address": "Địa Chỉ",
+    "gender": "Giới Tính",
+    "position": "Chức Danh",
+    "role": "Vai Trò",
+    "image": "Ảnh Đại Diện",
+    "save": "Lưu Người Dùng",
+    "edit": "Lưu Thay Đổi"
   }
 }
