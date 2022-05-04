@@ -26,7 +26,7 @@
           background-image: url("../../assets/medical-facility/thucuc.jpg");
         }
         &.section-outstanding-doctor {
-          background-image: url("../../assets/outstanding-doctor/doctor.jpg");
+          // background-image: url("../../assets/outstanding-doctor/doctor.jpg");
           width: 130px;
           height: 130px;
           border-radius: 50%;
@@ -47,9 +47,16 @@
   }
   .section-customize {
     padding: 5px;
+    cursor:pointer;
     .customize-border {
-      border: 1px solid grey;
+      border: 1px solid orange;
       padding: 20px;
+      transition: 1s;
+      &:hover{
+      transform: scale(1.05);
+      transition: 1s;
+      border:none!important;
+    }
     }
   }
 }
@@ -118,6 +125,10 @@
     background: #d7d7d7 !important;
   }
 }
+.slick-disabled {
+  display: none !important;
+}
+
 .home-footer {
   text-align: center;
   padding-top: 8px;
