@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./ManageSchedule.scss";
 import { FormattedMessage } from "react-intl";
 import Select from "react-select";
-import { getDetailInforDoctor } from "../../../services/userService";
+import { saveBulkScheduleDoctor } from "../../../services/userService";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils/constant";
 import DatePicker from "../../../components/Input/DatePicker";
@@ -87,7 +87,7 @@ class ManageSchedule extends Component {
     }
   };
 
-  handleSaveSchedule = () => {
+  handleSaveSchedule = async() => {
     let { rangeTime, selectedDoctor, currentDate } = this.state;
     let result = [];
     if (!currentDate) {
@@ -98,7 +98,8 @@ class ManageSchedule extends Component {
       toast.error("You Havent selected Doctor");
       return;
     }
-    let formattedDate = moment(currentDate).format("DD/MM/YYYY");
+    // let formattedDate = moment(currentDate).format("DD/MM/YYYY");
+    let formattedDate = new Date (currentDate).getTime();
     if (rangeTime && rangeTime.length > 0) {
       let selectedTime = rangeTime.filter((item) => item.isSelected === true);
       if (selectedTime && selectedTime.length > 0) {
@@ -106,10 +107,15 @@ class ManageSchedule extends Component {
           let object = {};
           object.doctorId = selectedDoctor.value;
           object.date = formattedDate;
-          object.time = time.keyMap;
+          object.timeType = time.keyMap;
           result.push(object);
         });
-        console.log(result);
+        let res = await saveBulkScheduleDoctor({
+          arrSchedule: result,
+          doctorId: selectedDoctor.value,
+          formattedDate: formattedDate,
+        });
+        console.log('check res save',res);
       } else {
         toast.error("You Havent selected Time ");
         return;

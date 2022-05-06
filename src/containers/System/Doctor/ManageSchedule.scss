@@ -16,6 +16,12 @@
         button {
             padding: 5px 15px;
             border: 1px solid grey;
+            transition: 0.5s;
+            &:hover {
+                color: red;
+                transform: scale(1.05);
+                transition: 2s;
+            }
         }
     }
     .btn-schedule {
