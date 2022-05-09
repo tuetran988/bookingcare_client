@@ -68,8 +68,23 @@
     "detail-doctor": {
       "schedule": "Schedule",
       "no-schedule": "Doctor doesn't have an appointment during this time !",
-      "choose":" Choose ",
-      "book-free":" And Book (Free !) "
+      "choose": " Choose ",
+      "book-free": " And Book (Free !) "
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Create More Informations Doctor",
+      "select-doctor": "Choose Doctors ...",
+      "intro": "Introduction",
+      "add": "Create Infor",
+      "save": "Save Infor",
+      "price": "Price",
+      "payment": "Payment Method",
+      "province":"Province",
+      "nameClinic":"Name Clinic",
+      "addressClinic":"Address Clinic",
+      "note":"Note"
     }
   }
 }

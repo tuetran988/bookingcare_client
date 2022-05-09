@@ -189,83 +189,82 @@ export const editUserFailed = () => ({
   type: actionTypes.EDIT_USER_FAILED,
 });
 
-
 // let res1 = await getTopDoctorHomeService('2');
 export const fetchTopDoctor = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getTopDoctorHomeService(''); 
+      let res = await getTopDoctorHomeService("");
       if (res && res.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_TOP_DOCTORS_SUCCESS,
-          dataDoctors: res.data
-        })
+          dataDoctors: res.data,
+        });
       } else {
         dispatch({
-          type: actionTypes.FETCH_TOP_DOCTORS_FAILED
-        })
+          type: actionTypes.FETCH_TOP_DOCTORS_FAILED,
+        });
       }
     } catch (e) {
       console.log("fetch top doctors fails", e);
       dispatch({
-        type: actionTypes.FETCH_TOP_DOCTORS_FAILED
-      })
+        type: actionTypes.FETCH_TOP_DOCTORS_FAILED,
+      });
     }
   };
-}
+};
 //
 export const fetchAllDoctors = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllDoctors(); 
+      let res = await getAllDoctors();
       if (res && res.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_ALL_DOCTORS_SUCCESS,
-          dataDoctors: res.data
-        })
+          dataDoctors: res.data,
+        });
       } else {
         dispatch({
-          type: actionTypes.FETCH_ALL_DOCTORS_FAILED
-        })
+          type: actionTypes.FETCH_ALL_DOCTORS_FAILED,
+        });
       }
     } catch (e) {
       console.log("fetch all doctors fails", e);
       dispatch({
-        type: actionTypes.FETCH_ALL_DOCTORS_FAILED
-      })
+        type: actionTypes.FETCH_ALL_DOCTORS_FAILED,
+      });
     }
   };
-}
+};
 //
 export const saveDetailDoctor = (data) => {
   return async (dispatch, getState) => {
     try {
-      let res = await saveDetailDoctorService(data); 
+      let res = await saveDetailDoctorService(data);
       if (res && res.errCode === 0) {
-        toast.success("SAVE DETAILS DOCTOR SUCCEED");
+        toast.success("SAVE DETAILS DOCTOR SUCCEED!");
         dispatch({
           type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
           dataDoctors: res.data,
         });
       } else {
-         toast.error("SAVE DETAILS DOCTOR err");
+        toast.error("SAVE DETAILS DOCTOR ERROR!");
         dispatch({
           type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
         });
       }
     } catch (e) {
-       toast.error("SAVE DETAILS DOCTOR err");
+      toast.error("SAVE DETAILS DOCTOR ERROR!");
       dispatch({
         type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED,
       });
     }
   };
-}
+};
 //
 export const fetchAllScheduleTime = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllCodeService('TIME');
+      let res = await getAllCodeService("TIME");
       if (res && res.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
@@ -285,3 +284,43 @@ export const fetchAllScheduleTime = () => {
   };
 };
 
+/////////////
+
+export const getRequiredDoctorInfor = () => {
+  return async (dispatch, getState) => {
+    try {
+      dispatch({ type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_START });
+      let resPrice = await getAllCodeService("PRICE");
+      let resPayment = await getAllCodeService("PAYMENT");
+      let resProvince = await getAllCodeService("PROVINCE");
+      if (
+        resPrice &&
+        resPrice.errCode === 0 &&
+        resPayment &&
+        resPayment.errCode === 0 &&
+        resProvince &&
+        resProvince.errCode === 0
+      ) {
+        let data = {
+          resPrice : resPrice.data,
+          resPayment : resPayment.data,
+          resProvince : resProvince.data,
+        }
+        dispatch(fetchRequiredDoctorInforSuccess(data));
+      } else {
+        dispatch(fetchRequiredDoctorInforFailed());
+      }
+    } catch (e) {
+      dispatch(fetchRequiredDoctorInforFailed());
+      console.log("fetch doctor price error", e);
+    }
+  };
+};
+//
+export const fetchRequiredDoctorInforSuccess = (allRequiredData) => ({
+  type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS,
+  data: allRequiredData,
+});
+export const fetchRequiredDoctorInforFailed = () => ({
+  type: actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_FAILED,
+});

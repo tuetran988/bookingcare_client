@@ -66,10 +66,25 @@
   },
   "patient": {
     "detail-doctor": {
-       "schedule":"Lịch Khám",
-       "no-schedule":"Bác Sĩ Không Có Lịch Khám Bệnh Trong Thời Gian Này ! ",
-        "choose": " Chọn ",
-        "book-free": " Và Đặt Lịch (Miễn Phí !) "
+      "schedule": "Lịch Khám",
+      "no-schedule": "Bác Sĩ Không Có Lịch Khám Bệnh Trong Thời Gian Này ! ",
+      "choose": " Chọn ",
+      "book-free": " Và Đặt Lịch (Miễn Phí !) "
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Tạo Thông Tin Bác Sỹ",
+      "select-doctor": "Chọn Bác Sỹ",
+      "intro": "Thông Tin Giới Thiệu",
+      "add": "Tạo Thông Tin",
+      "save": "Lưu Thông Tin",
+      "price": "Giá Khám",
+      "payment": "Phương Thức Thanh Toán",
+      "province": "Tỉnh Thành",
+      "nameClinic": "Tên Phòng Khám",
+      "addressClinic": "Địa Chỉ Phòng Khám",
+      "note":"Ghi Chú"
     }
   }
 }
