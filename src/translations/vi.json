@@ -70,6 +70,27 @@
       "no-schedule": "Bác Sĩ Không Có Lịch Khám Bệnh Trong Thời Gian Này ! ",
       "choose": " Chọn ",
       "book-free": " Và Đặt Lịch (Miễn Phí !) "
+    },
+    "extra-infor-doctor": {
+      "text-address": "địa chỉ khám",
+      "price": "Giá Khám :",
+      "detail": "Xem Chi Tiết",
+      "payment": "Người Bệnh Có Thể Thanh Toán Bằng Hình Thức :",
+      "hide-price": "Ẩn Bảng Giá"
+    },
+    "booking-modal": {
+      "title": "Thông Tin Đặt Lịch Khám Bệnh",
+      "fullName": "Họ Và Tên",
+      "phoneNumber": "Số Điện Thoại",
+      "email": "Email",
+      "address": "Địa Chỉ",
+      "reason": "Lý Do Khám",
+      "birthday": "Ngày Sinh",
+      "gender": "Giới Tính",
+      "btnConfirm": "Xác Nhận",
+      "btnCancel":"Hủy Bỏ",
+      "priceBooking":"Miễn Phí Đặt Lịch",
+      "price":"Giá Khám"
     }
   },
   "admin": {
@@ -84,7 +105,7 @@
       "province": "Tỉnh Thành",
       "nameClinic": "Tên Phòng Khám",
       "addressClinic": "Địa Chỉ Phòng Khám",
-      "note":"Ghi Chú"
+      "note": "Ghi Chú"
     }
   }
 }
