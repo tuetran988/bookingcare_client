@@ -61,10 +61,14 @@ export const doctorMenu = [
   {
     name: "menu.admin.manage-user",
     menus: [
-      {// Quan Ly ke hoach kham benh cua bac s 
+      {// Quan Ly ke hoach kham benh cua bac si 
             name: "menu.doctor.manage-schedule",
             link: "/doctor/manage-schedule",
-      }
+      },
+      {// Quan Ly benh nhan kham benh cua bac sy
+            name: "menu.doctor.manage-patient",
+            link: "/doctor/manage-patient",
+      },
     ],
   },
 ];
