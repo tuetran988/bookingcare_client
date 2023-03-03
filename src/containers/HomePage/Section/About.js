@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { FormattedMessage } from "react-intl";
+// import { FormattedMessage } from "react-intl";
 
 class About extends Component {
   render() {
@@ -15,11 +15,11 @@ class About extends Component {
             <iframe
               width="100%"
               height="400px"
-              src="https://www.youtube.com/embed/z-zUhD9tMOM"
+              src="https://www.youtube.com/embed/RlzrRVUotCo"
               title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
           </div>
           <div className="content-right">
