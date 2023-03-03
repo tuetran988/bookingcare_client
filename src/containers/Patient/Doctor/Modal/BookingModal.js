@@ -12,6 +12,7 @@ import Select from "react-select";
 import { postPatientBookAppointment } from '../../../../services/userService';
 import { toast } from 'react-toastify';
 import moment from "moment";
+import LoadingOverlay from "react-loading-overlay";
 class BookingModal extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ class BookingModal extends Component {
       genders: "",
       doctorId: "",
       timeType: "",
+      isShowLoading:false
     };
   }
   async componentDidMount() {
@@ -120,7 +122,9 @@ class BookingModal extends Component {
     let date = new Date(this.state.birthday).getTime();
     let timeString = this.buildTimeBooking(this.props.dataTime);
     let doctorName = this.buildDoctorName(this.props.dataTime);
-
+    this.setState({
+      isShowLoading: true
+    })
     let res = await postPatientBookAppointment({
       fullName: this.state.fullName,
       phoneNumber: this.state.phoneNumber,
@@ -137,6 +141,9 @@ class BookingModal extends Component {
       timeString: timeString,
       doctorName: doctorName,
     });
+    this.setState({
+      isShowLoading:false
+    })
     if (res && res.errCode === 0) {
       toast.success("Booking a new Appointment success!");
       this.props.closeBookingModal();
@@ -152,6 +159,12 @@ class BookingModal extends Component {
       doctorId = dataTime.doctorId;
     }
     return (
+      <>
+        <LoadingOverlay
+          active={this.state.isShowLoading}
+          spinner
+          text="Loading..."
+        >
       <Modal
         isOpen={isOpenModal}
         className={"booking-modal-container"}
@@ -262,7 +275,9 @@ class BookingModal extends Component {
             </button>
           </div>
         </div>
-      </Modal>
+        </Modal>
+      </LoadingOverlay>
+      </>
     );
   }
 }
